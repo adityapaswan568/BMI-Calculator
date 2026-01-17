@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium BMI Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <div class="glass-card">
+            <header>
+                <h1>BMI Calculator</h1>
+                <p class="subtitle">Check your body mass index</p>
+            </header>
+
+            <div class="input-group">
+                <div class="unit-toggle">
+                    <button id="metric-btn" class="active">Metric (kg/cm)</button>
+                    <button id="imperial-btn">Imperial (lbs/ft)</button>
+                </div>
+
+                <form id="bmi-form">
+                    <!-- Metric Inputs -->
+                    <div id="metric-inputs" class="inputs-section active">
+                        <div class="input-wrapper">
+                            <label for="height-cm">Height (cm)</label>
+                            <input type="number" id="height-cm" placeholder="175" min="0">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="weight-kg">Weight (kg)</label>
+                            <input type="number" id="weight-kg" placeholder="70" min="0">
+                        </div>
+                    </div>
+
+                    <!-- Imperial Inputs -->
+                    <div id="imperial-inputs" class="inputs-section">
+                        <div class="input-wrapper double">
+                            <div class="sub-input">
+                                <label for="height-ft">Height (ft)</label>
+                                <input type="number" id="height-ft" placeholder="5" min="0">
+                            </div>
+                            <div class="sub-input">
+                                <label for="height-in">Height (in)</label>
+                                <input type="number" id="height-in" placeholder="9" min="0">
+                            </div>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="weight-lbs">Weight (lbs)</label>
+                            <input type="number" id="weight-lbs" placeholder="154" min="0">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="calculate-btn">Calculate BMI</button>
+                </form>
+            </div>
+
+            <div id="result-container" class="result-container hidden">
+                <div class="result-circle">
+                    <span id="bmi-value">0.0</span>
+                    <span class="bmi-label">BMI</span>
+                </div>
+                <div class="result-text">
+                    <h2 id="bmi-category">Normal</h2>
+                    <p id="bmi-description">You have a healthy body weight.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
